@@ -1,8 +1,10 @@
 package com.androiddevs.mvvmnewsapp.ui.fragments
 
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.webkit.WebViewClient
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.androiddevs.mvvmnewsapp.R
@@ -16,6 +18,7 @@ class ArticleFragment : Fragment(R.layout.fragment_article) {
     lateinit var viewModel: NewsViewModel
     val args: ArticleFragmentArgs by navArgs()
 
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = (activity as NewsActivity).viewModel
